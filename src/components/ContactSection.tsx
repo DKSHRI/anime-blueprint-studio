@@ -42,10 +42,10 @@ const ContactSection = () => {
                 Email
               </h3>
               <a
-                href="mailto:himanshi@example.com"
+                href="mailto:vatsahimanshi7@gmail.com"
                 className="text-foreground font-body hover:text-accent transition-colors"
               >
-                himanshi@example.com
+                vatsahimanshi7@gmail.com
               </a>
             </div>
             <div>
@@ -54,16 +54,20 @@ const ContactSection = () => {
               </h3>
               <div className="flex flex-col gap-2">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/himanshi-vats"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-foreground font-body hover:text-accent transition-colors"
                 >
                   LinkedIn →
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/vats_himanshi_"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-foreground font-body hover:text-accent transition-colors"
                 >
-                  Instagram →
+                  @vats_himanshi_ →
                 </a>
               </div>
             </div>

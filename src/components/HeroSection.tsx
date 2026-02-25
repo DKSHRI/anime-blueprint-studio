@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import heroIllustration from "@/assets/hero-illustration.png";
+import ArchitectGirlSVG from "./ArchitectGirlSVG";
 
 const HeroSection = () => {
   return (
@@ -78,7 +78,7 @@ const HeroSection = () => {
           </motion.a>
         </motion.div>
 
-        {/* Illustration */}
+        {/* SVG Illustration - Architecture girl designing on wall */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -87,13 +87,7 @@ const HeroSection = () => {
         >
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-to-br from-accent/10 via-warm to-secondary/40 rounded-lg blur-3xl opacity-70" />
-            <div className="absolute -inset-1 bg-gradient-to-br from-accent/20 to-transparent rounded-lg" />
-            <img
-              src={heroIllustration}
-              alt="Himanshi Vats - Architecture student and future architect illustration"
-              className="relative w-full rounded-lg shadow-2xl"
-              loading="eager"
-            />
+            <ArchitectGirlSVG />
           </div>
         </motion.div>
       </div>
