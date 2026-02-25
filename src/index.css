@@ -108,25 +108,18 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Skill bar animation */
-@keyframes skill-fill {
-  from { width: 0%; }
-  to { width: var(--skill-level); }
+/* Hero gradient background */
+.bg-hero-gradient {
+  background: 
+    radial-gradient(ellipse at 20% 50%, hsl(var(--warm)) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, hsl(var(--blueprint) / 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--beige)) 0%, transparent 60%),
+    hsl(var(--background));
 }
 
-.skill-bar-fill {
-  animation: skill-fill 1.2s ease-out forwards;
-  width: 0%;
-}
-
-/* Section fade-in */
-@keyframes section-fade {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Building section gradient */
+.bg-building-gradient {
+  background:
+    radial-gradient(ellipse at 50% 70%, hsl(var(--warm)) 0%, transparent 50%),
+    hsl(var(--background));
 }
