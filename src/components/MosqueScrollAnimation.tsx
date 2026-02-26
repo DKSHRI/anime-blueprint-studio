@@ -30,9 +30,9 @@ const MosqueScrollAnimation = () => {
   const glowOpacity = useTransform(scrollYProgress, [0.75, 0.9], [0, 0.5]);
 
   return (
-    <section>
+    <section id="contact" className="scroll-mt-24">
       <div ref={containerRef} className="relative h-[240vh]">
-        <div className="sticky top-0 h-screen flex items-center">
+        <div className="sticky top-0 h-[100svh] flex items-center">
           <div className="w-full max-w-5xl mx-auto px-6">
             <div className="mb-8">
               <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Get in Touch</p>

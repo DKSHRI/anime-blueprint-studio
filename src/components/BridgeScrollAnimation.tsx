@@ -24,7 +24,7 @@ const BridgeScrollAnimation = () => {
   const reflectionOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 0.3]);
 
   return (
-    <>
+    <section id="about" className="scroll-mt-24">
       <div ref={containerRef} className="relative py-0 h-[240vh]">
         <div className="sticky top-0 h-[100svh] flex items-center">
           <div className="w-full max-w-5xl mx-auto px-6">
@@ -159,7 +159,7 @@ const BridgeScrollAnimation = () => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 

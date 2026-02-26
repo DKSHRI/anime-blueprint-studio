@@ -61,7 +61,7 @@ const CityScrollAnimation = () => {
   ];
 
   return (
-    <>
+    <section id="skills" className="scroll-mt-24">
       <div ref={containerRef} className="relative py-0 h-[230vh]">
         <div className="sticky top-0 h-[100svh] flex items-center">
           <div className="w-full max-w-5xl mx-auto px-6">
@@ -175,7 +175,7 @@ const CityScrollAnimation = () => {
           <SkillBar key={skill.name} skill={skill} index={i} scrollYProgress={scrollYProgress} />
         ))}
         </div>
-    </>
+    </section>
   );
 };
 

@@ -21,7 +21,7 @@ const TowerScrollAnimation = () => {
   const lightsOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
 
   return (
-    <>
+    <section id="projects" className="scroll-mt-24">
       <div ref={containerRef} className="relative py-0 h-[240vh]">
         <div className="sticky top-0 h-[100svh] flex items-center">
           <div className="w-full max-w-6xl mx-auto px-6">
@@ -160,7 +160,7 @@ const TowerScrollAnimation = () => {
           </div>
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
