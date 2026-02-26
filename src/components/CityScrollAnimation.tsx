@@ -61,19 +61,20 @@ const CityScrollAnimation = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative py-0 h-[230vh]">
-      <div className="sticky top-0 h-screen flex items-center">
-        <div className="w-full max-w-5xl mx-auto px-6">
-        <div className="mb-8">
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Expertise</p>
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
-            Core <span className="italic font-normal text-accent">Skills</span>
-          </h2>
-        </div>
+    <>
+      <div ref={containerRef} className="relative py-0 h-[230vh]">
+        <div className="sticky top-0 h-[100svh] flex items-center">
+          <div className="w-full max-w-5xl mx-auto px-6">
+            <div className="mb-4 md:mb-8">
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Expertise</p>
+              <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground mb-3 md:mb-4">
+                Core <span className="italic font-normal text-accent">Skills</span>
+              </h2>
+            </div>
 
-        {/* City SVG */}
-        <div className="flex justify-center mb-12">
-          <svg viewBox="0 0 600 300" className="w-full max-w-2xl h-auto" fill="none">
+            {/* City SVG */}
+            <div className="flex justify-center mb-5 md:mb-12">
+              <svg viewBox="0 0 600 300" className="w-full max-w-[340px] md:max-w-2xl h-auto" fill="none">
             {/* Sky gradient */}
             <defs>
               <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
@@ -152,23 +153,29 @@ const CityScrollAnimation = () => {
           </svg>
         </div>
 
-        {/* Typing skill descriptions */}
-        <div className="mb-8">
-          <ScrollTypingText
-            text="A growing mastery of architectural tools and creative disciplines, honed through academic projects and hands-on exploration."
-            className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-2xl"
-            progress={scrollYProgress}
-          />
-        </div>
+            {/* Typing skill descriptions */}
+            <div className="mb-4 md:mb-8">
+              <ScrollTypingText
+                text="A growing mastery of architectural tools and creative disciplines, honed through academic projects and hands-on exploration."
+                className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-2xl"
+                progress={scrollYProgress}
+              />
+            </div>
 
-        <div className="space-y-8">
-          {skills.map((skill, i) => (
-            <SkillBar key={skill.name} skill={skill} index={i} scrollYProgress={scrollYProgress} />
-          ))}
-        </div>
+            <div className="hidden md:block space-y-8">
+              {skills.map((skill, i) => (
+                <SkillBar key={skill.name} skill={skill} index={i} scrollYProgress={scrollYProgress} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="md:hidden px-6 pb-14 space-y-5">
+        {skills.map((skill, i) => (
+          <SkillBar key={skill.name} skill={skill} index={i} scrollYProgress={scrollYProgress} />
+        ))}
+        </div>
+    </>
   );
 };
 

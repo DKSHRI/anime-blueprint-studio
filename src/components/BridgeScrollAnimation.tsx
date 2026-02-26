@@ -24,19 +24,20 @@ const BridgeScrollAnimation = () => {
   const reflectionOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 0.3]);
 
   return (
-    <div ref={containerRef} className="relative py-0 h-[240vh]">
-      <div className="sticky top-0 h-screen flex items-center">
-        <div className="w-full max-w-5xl mx-auto px-6">
-          <div className="mb-8">
+    <>
+      <div ref={containerRef} className="relative py-0 h-[240vh]">
+        <div className="sticky top-0 h-[100svh] flex items-center">
+          <div className="w-full max-w-5xl mx-auto px-6">
+            <div className="mb-4 md:mb-8">
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">About</p>
-            <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
+            <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground mb-3 md:mb-4">
               The <span className="italic font-normal text-accent">Designer</span>
             </h2>
           </div>
 
-        {/* Bridge SVG */}
-        <div className="flex justify-center mb-12">
-          <svg viewBox="0 0 600 250" className="w-full max-w-2xl h-auto" fill="none">
+          {/* Bridge SVG */}
+          <div className="flex justify-center mb-5 md:mb-12">
+            <svg viewBox="0 0 600 250" className="w-full max-w-[320px] md:max-w-2xl h-auto" fill="none">
             {/* Water */}
             <motion.g style={{ opacity: waterOpacity }}>
               <rect x="0" y="190" width="600" height="60" fill="hsl(210 40% 85% / 0.3)" />
@@ -116,36 +117,49 @@ const BridgeScrollAnimation = () => {
           </svg>
         </div>
 
-        {/* Typing text content */}
-        <div className="grid md:grid-cols-2 gap-16">
-          <div className="space-y-6">
-            <ScrollTypingText
-              text="Himanshi Vats is a passionate architecture student at Apeejay School of Architecture, Greater Noida, driven by a deep commitment to sustainable design and spatial storytelling."
-              className="text-muted-foreground leading-relaxed font-body"
-              progress={scrollYProgress}
-            />
-            <ScrollTypingText
-              text="Her work explores the intersection of urban design, human experience, and environmental responsibility."
-              className="text-muted-foreground leading-relaxed font-body"
-              progress={scrollYProgress}
-            />
-          </div>
-          <div>
-            <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6 font-body">
-              Tools & Software
-            </h3>
-            <div className="flex flex-wrap gap-3">
-              {["AutoCAD", "SketchUp", "Revit", "Lumion", "Adobe Photoshop"].map((skill) => (
-                <span key={skill} className="px-4 py-2 bg-background border border-border text-sm text-foreground font-body rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors duration-200">
-                  {skill}
-                </span>
-              ))}
+          {/* Typing text content */}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-16">
+            <div className="space-y-3 md:space-y-6">
+              <ScrollTypingText
+                text="Himanshi Vats is a passionate architecture student at Apeejay School of Architecture, Greater Noida, driven by a deep commitment to sustainable design and spatial storytelling."
+                className="text-muted-foreground leading-relaxed font-body text-sm md:text-base"
+                progress={scrollYProgress}
+              />
+              <ScrollTypingText
+                text="Her work explores the intersection of urban design, human experience, and environmental responsibility."
+                className="text-muted-foreground leading-relaxed font-body text-sm md:text-base"
+                progress={scrollYProgress}
+              />
+            </div>
+            <div className="hidden md:block">
+              <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6 font-body">
+                Tools & Software
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {["AutoCAD", "SketchUp", "Revit", "Lumion", "Adobe Photoshop"].map((skill) => (
+                  <span key={skill} className="px-4 py-2 bg-background border border-border text-sm text-foreground font-body rounded-sm hover:bg-accent hover:text-accent-foreground transition-colors duration-200">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
         </div>
       </div>
-    </div>
+      <div className="md:hidden px-6 pb-14">
+        <h3 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4 font-body">
+          Tools & Software
+        </h3>
+        <div className="flex flex-wrap gap-2">
+          {["AutoCAD", "SketchUp", "Revit", "Lumion", "Adobe Photoshop"].map((skill) => (
+            <span key={skill} className="px-3 py-1.5 bg-background border border-border text-xs text-foreground font-body rounded-sm">
+              {skill}
+            </span>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 

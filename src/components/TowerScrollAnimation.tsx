@@ -21,20 +21,21 @@ const TowerScrollAnimation = () => {
   const lightsOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
 
   return (
-    <div ref={containerRef} className="relative py-0 h-[240vh]">
-      <div className="sticky top-0 h-screen flex items-center">
-        <div className="w-full max-w-6xl mx-auto px-6">
-        <div className="mb-8">
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Portfolio</p>
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
-            Projects
-          </h2>
-        </div>
+    <>
+      <div ref={containerRef} className="relative py-0 h-[240vh]">
+        <div className="sticky top-0 h-[100svh] flex items-center">
+          <div className="w-full max-w-6xl mx-auto px-6">
+            <div className="mb-4 md:mb-8">
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Portfolio</p>
+              <h2 className="text-3xl md:text-5xl font-heading font-semibold text-foreground mb-3 md:mb-4">
+                Projects
+              </h2>
+            </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Tower SVG */}
-          <div className="flex justify-center">
-            <svg viewBox="0 0 300 450" className="w-full max-w-xs h-auto" fill="none">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-start">
+              {/* Tower SVG */}
+              <div className="flex justify-center">
+                <svg viewBox="0 0 300 450" className="w-full max-w-[200px] md:max-w-xs h-auto" fill="none">
               {/* Ground */}
               <motion.g style={{ opacity: groundOpacity }}>
                 <ellipse cx="150" cy="420" rx="130" ry="20" fill="hsl(100 20% 40% / 0.15)" />
@@ -117,34 +118,49 @@ const TowerScrollAnimation = () => {
             </svg>
           </div>
 
-          {/* Project cards with typing text */}
-          <div>
-            <div className="mb-8">
-              <ScrollTypingText
-                text="Each project tells a story of space, form, and function — bringing architectural visions to life through research, design, and meticulous execution."
-                className="text-muted-foreground leading-relaxed font-body text-sm md:text-base"
-                progress={scrollYProgress}
-              />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-4">
-              {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div key={item} className="group relative aspect-[4/3] bg-muted rounded-sm overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-10 h-10 border border-border rounded-sm flex items-center justify-center mx-auto mb-3 group-hover:border-accent/50 transition-colors">
-                        <span className="text-muted-foreground text-lg">+</span>
-                      </div>
-                      <p className="text-xs text-muted-foreground tracking-widest uppercase font-body">Coming Soon</p>
-                    </div>
-                  </div>
+              {/* Project cards with typing text */}
+              <div>
+                <div className="mb-4 md:mb-8">
+                  <ScrollTypingText
+                    text="Each project tells a story of space, form, and function — bringing architectural visions to life through research, design, and meticulous execution."
+                    className="text-muted-foreground leading-relaxed font-body text-sm md:text-base"
+                    progress={scrollYProgress}
+                  />
                 </div>
-              ))}
+                <div className="hidden md:grid sm:grid-cols-2 gap-4">
+                  {[1, 2, 3, 4, 5, 6].map((item) => (
+                    <div key={item} className="group relative aspect-[4/3] bg-muted rounded-sm overflow-hidden border border-border hover:border-accent/40 transition-all duration-300 hover:shadow-lg">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="text-center">
+                          <div className="w-10 h-10 border border-border rounded-sm flex items-center justify-center mx-auto mb-3 group-hover:border-accent/50 transition-colors">
+                            <span className="text-muted-foreground text-lg">+</span>
+                          </div>
+                          <p className="text-xs text-muted-foreground tracking-widest uppercase font-body">Coming Soon</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
       </div>
-    </div>
+      <div className="md:hidden px-6 pb-14 grid sm:grid-cols-2 gap-3">
+        {[1, 2, 3, 4, 5, 6].map((item) => (
+          <div key={item} className="group relative aspect-[4/3] bg-muted rounded-sm overflow-hidden border border-border">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center">
+                <div className="w-8 h-8 border border-border rounded-sm flex items-center justify-center mx-auto mb-2">
+                  <span className="text-muted-foreground text-base">+</span>
+                </div>
+                <p className="text-[10px] text-muted-foreground tracking-widest uppercase font-body">Coming Soon</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
