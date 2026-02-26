@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import BuildingScrollAnimation from "@/components/BuildingScrollAnimation";
-import AboutSection from "@/components/AboutSection";
-import SkillsSection from "@/components/SkillsSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import ContactSection from "@/components/ContactSection";
+import BridgeScrollAnimation from "@/components/BridgeScrollAnimation";
+import CityScrollAnimation from "@/components/CityScrollAnimation";
+import TowerScrollAnimation from "@/components/TowerScrollAnimation";
+import MosqueScrollAnimation from "@/components/MosqueScrollAnimation";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,10 +13,14 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <BuildingScrollAnimation />
-      <AboutSection />
-      <SkillsSection />
-      <ProjectsSection />
-      <ContactSection />
+      <section className="bg-secondary/30">
+        <BridgeScrollAnimation />
+      </section>
+      <CityScrollAnimation />
+      <section className="bg-secondary/30">
+        <TowerScrollAnimation />
+      </section>
+      <MosqueScrollAnimation />
       <Footer />
     </div>
   );
