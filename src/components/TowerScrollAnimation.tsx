@@ -6,7 +6,7 @@ const TowerScrollAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
   const baseOpacity = useTransform(scrollYProgress, [0.05, 0.15], [0, 1]);
@@ -21,8 +21,9 @@ const TowerScrollAnimation = () => {
   const lightsOpacity = useTransform(scrollYProgress, [0.7, 0.85], [0, 1]);
 
   return (
-    <div ref={containerRef} className="relative py-20">
-      <div className="max-w-6xl mx-auto px-6">
+    <div ref={containerRef} className="relative py-0 h-[240vh]">
+      <div className="sticky top-0 h-screen flex items-center">
+        <div className="w-full max-w-6xl mx-auto px-6">
         <div className="mb-8">
           <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Portfolio</p>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
@@ -122,6 +123,7 @@ const TowerScrollAnimation = () => {
               <ScrollTypingText
                 text="Each project tells a story of space, form, and function — bringing architectural visions to life through research, design, and meticulous execution."
                 className="text-muted-foreground leading-relaxed font-body text-sm md:text-base"
+                progress={scrollYProgress}
               />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -139,6 +141,7 @@ const TowerScrollAnimation = () => {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

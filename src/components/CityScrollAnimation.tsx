@@ -30,7 +30,7 @@ const CityScrollAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
   // Buildings rise up sequentially
@@ -61,8 +61,9 @@ const CityScrollAnimation = () => {
   ];
 
   return (
-    <div ref={containerRef} className="relative py-20">
-      <div className="max-w-5xl mx-auto px-6">
+    <div ref={containerRef} className="relative py-0 h-[230vh]">
+      <div className="sticky top-0 h-screen flex items-center">
+        <div className="w-full max-w-5xl mx-auto px-6">
         <div className="mb-8">
           <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">Expertise</p>
           <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
@@ -156,6 +157,7 @@ const CityScrollAnimation = () => {
           <ScrollTypingText
             text="A growing mastery of architectural tools and creative disciplines, honed through academic projects and hands-on exploration."
             className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-2xl"
+            progress={scrollYProgress}
           />
         </div>
 
@@ -163,6 +165,7 @@ const CityScrollAnimation = () => {
           {skills.map((skill, i) => (
             <SkillBar key={skill.name} skill={skill} index={i} scrollYProgress={scrollYProgress} />
           ))}
+        </div>
         </div>
       </div>
     </div>

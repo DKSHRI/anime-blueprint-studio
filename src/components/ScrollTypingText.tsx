@@ -1,17 +1,19 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 
 interface Props {
   text: string;
   className?: string;
+  progress?: MotionValue<number>;
 }
 
-const ScrollTypingText = ({ text, className = "" }: Props) => {
+const ScrollTypingText = ({ text, className = "", progress }: Props) => {
   const ref = useRef<HTMLSpanElement>(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollYProgress: localProgress } = useScroll({
     target: ref,
     offset: ["start 0.9", "start 0.3"],
   });
+  const scrollYProgress = progress ?? localProgress;
 
   const chars = text.split("");
 

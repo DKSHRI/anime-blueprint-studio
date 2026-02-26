@@ -6,7 +6,7 @@ const BridgeScrollAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
   // Bridge construction phases
@@ -24,14 +24,15 @@ const BridgeScrollAnimation = () => {
   const reflectionOpacity = useTransform(scrollYProgress, [0.7, 0.9], [0, 0.3]);
 
   return (
-    <div ref={containerRef} className="relative py-20">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="mb-8">
-          <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">About</p>
-          <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
-            The <span className="italic font-normal text-accent">Designer</span>
-          </h2>
-        </div>
+    <div ref={containerRef} className="relative py-0 h-[240vh]">
+      <div className="sticky top-0 h-screen flex items-center">
+        <div className="w-full max-w-5xl mx-auto px-6">
+          <div className="mb-8">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3 font-body">About</p>
+            <h2 className="text-4xl md:text-5xl font-heading font-semibold text-foreground mb-4">
+              The <span className="italic font-normal text-accent">Designer</span>
+            </h2>
+          </div>
 
         {/* Bridge SVG */}
         <div className="flex justify-center mb-12">
@@ -121,10 +122,12 @@ const BridgeScrollAnimation = () => {
             <ScrollTypingText
               text="Himanshi Vats is a passionate architecture student at Apeejay School of Architecture, Greater Noida, driven by a deep commitment to sustainable design and spatial storytelling."
               className="text-muted-foreground leading-relaxed font-body"
+              progress={scrollYProgress}
             />
             <ScrollTypingText
               text="Her work explores the intersection of urban design, human experience, and environmental responsibility."
               className="text-muted-foreground leading-relaxed font-body"
+              progress={scrollYProgress}
             />
           </div>
           <div>
@@ -139,6 +142,7 @@ const BridgeScrollAnimation = () => {
               ))}
             </div>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ const MosqueScrollAnimation = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
@@ -158,6 +158,7 @@ const MosqueScrollAnimation = () => {
           <ScrollTypingText
             text="Let's connect and create something extraordinary together. Whether it's a design collaboration or a conversation about architecture, I'd love to hear from you."
             className="text-muted-foreground leading-relaxed font-body text-sm md:text-base max-w-2xl"
+            progress={scrollYProgress}
           />
         </div>
 
