@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import ArchitecturalDecor from "./ArchitecturalDecor";
 
 const skills = [
   { name: "Architectural Design", level: 90 },
@@ -14,7 +15,9 @@ const SkillsSection = () => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" className="py-32">
+    <section id="skills" className="relative py-32 overflow-hidden">
+      <ArchitecturalDecor variant="crane" position="left" className="top-12 w-36 opacity-50" />
+
       <div ref={ref} className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

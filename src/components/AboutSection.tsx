@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import ArchitecturalDecor from "./ArchitecturalDecor";
 
 const skills = [
   "AutoCAD",
@@ -15,7 +16,9 @@ const AboutSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="py-32 bg-secondary/30">
+    <section id="about" className="relative py-32 bg-secondary/30 overflow-hidden">
+      <ArchitecturalDecor variant="blueprint" position="right" className="top-8 w-40 opacity-60" />
+
       <div ref={ref} className="max-w-5xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

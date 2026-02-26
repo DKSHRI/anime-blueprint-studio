@@ -3,7 +3,7 @@ import ArchitectGirlSVG from "./ArchitectGirlSVG";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-hero-gradient" />
       
@@ -39,7 +39,7 @@ const HeroSection = () => {
       {/* Subtle noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iMSIvPjwvc3ZnPg==')]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-10 lg:py-20 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 h-full">
         {/* Text */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -83,7 +83,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="flex-1 max-w-xl"
+          className="flex-1 max-w-xs lg:max-w-xl"
         >
           <div className="relative">
             <div className="absolute -inset-6 bg-gradient-to-br from-accent/10 via-warm to-secondary/40 rounded-lg blur-3xl opacity-70" />
