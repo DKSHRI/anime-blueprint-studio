@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import ArchitecturalDecor from "./ArchitecturalDecor";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -8,13 +9,14 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder - no backend
     alert("Thank you for your message!");
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <section id="contact" className="py-32">
+    <section id="contact" className="relative py-32 overflow-hidden">
+      <ArchitecturalDecor variant="compass" position="left" className="bottom-12 w-36 opacity-40" />
+
       <div ref={ref} className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -30,7 +32,6 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-16">
-          {/* Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -73,7 +74,6 @@ const ContactSection = () => {
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             onSubmit={handleSubmit}
             initial={{ opacity: 0, y: 20 }}
